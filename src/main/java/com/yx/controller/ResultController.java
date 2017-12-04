@@ -18,6 +18,7 @@ public class ResultController {
      * @return
      */
     public static List<SLTZDATA> equalResult(List<SLTZDATA> compareList, List<SLTZDATA> toCompareList, int[] compareFileArr){
+        //TODO  数据过滤排序  还有导出sql没处理
         List<SLTZDATA> resultList = new ArrayList<>();
         for(SLTZDATA a : compareList){
             boolean flag = false;
