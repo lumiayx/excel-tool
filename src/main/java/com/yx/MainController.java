@@ -8,6 +8,7 @@ import com.yx.model.ransom.GQT;
 import com.yx.model.ransom.SLTZDATA;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * 主程序入口
@@ -19,7 +20,9 @@ public class MainController {
         List<SLTZDATA> scList = OnLineController.readExcel();
         List<SLTZDATA> slList = RansomController.readExcel();
 
-        ResultController.equalResult(scList,slList,new int[]{0,0,0,0,0,0,0});
+        Map<String, List<SLTZDATA>> map = ResultController.equalResult(scList, slList, new int[]{0, 0, 0, 0, 0, 0, 0});
+
+        
         System.out.println("...");
     }
 }
