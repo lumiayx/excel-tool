@@ -62,9 +62,9 @@ public class ResultController {
             }
         }
 
-        map.put("a", aDiffList);
-        map.put("b", toADiffList);
-        map.put("ab", aCommonList.size() > toACommonList.size() ? aCommonList : toACommonList);
+        map.put("onlineDiff", aDiffList);
+        map.put("ransomDiff", toADiffList);
+        map.put("common", aCommonList.size() > toACommonList.size() ? aCommonList : toACommonList);
         return map;
     }
 
@@ -107,5 +107,6 @@ public class ResultController {
                 return false;
             }
         }
+        return flag;
     }
 }
