@@ -14,7 +14,7 @@ public class PropertiesManager {
     private static final String encode = "UTF-8";//文件的编码格式
 
     public PropertiesManager() {
-        String configFile = "file.properties"; //配置文件路径
+        String configFile = "excel.properties"; //配置文件路径
         properties = new Properties();
         InputStream in = PropertiesManager.class.getClassLoader().getResourceAsStream(configFile);
         try {
@@ -36,6 +36,12 @@ public class PropertiesManager {
 
     //通过Key获取对应的value的值
     public String getString(String key){
-        return properties.getProperty(key);
+        try {
+            return properties.getProperty(key);
+            //return new String(properties.getProperty(key).getBytes("UTF-8"));
+        }catch(Exception e){
+            return properties.getProperty(key);
+        }
+
     }
 }

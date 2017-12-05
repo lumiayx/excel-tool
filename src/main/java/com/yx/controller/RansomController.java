@@ -1,6 +1,7 @@
 package com.yx.controller;
 
 
+import com.yx.excel.util.DataUtil;
 import com.yx.excel.util.ExcelImportUtil;
 import com.yx.excel.util.PropertiesManager;
 import com.yx.model.online.SCSJ;
@@ -55,8 +56,8 @@ public class RansomController {
             SLTZDATA s = new SLTZDATA();
             s.setHtbh(gqt.getD() == null ? "" : gqt.getD());
             s.setName(gqt.getB() == null ? "" : gqt.getB());
-            s.setCkmoney(gqt.getP() == null ? "" : gqt.getP());
-            s.setFkTime(gqt.getZ() == null ? "" : gqt.getZ());
+            s.setCkmoney(DataUtil.changeMoney(gqt.getP()));
+            s.setFkTime(DataUtil.changeDate(gqt.getZ()));
             s.setKhsfzh(gqt.getE() == null ? "" : gqt.getE());
             s.setProName(sheetName);
             s.setCurMoney("");
@@ -79,7 +80,7 @@ public class RansomController {
             s.setName(gqt.getB() == null ? "" : gqt.getB());
             s.setHtbh(gqt.getD() == null ? "" : gqt.getD());
             s.setKhsfzh(gqt.getE() == null ? "" : gqt.getE());
-            s.setCkmoney(gqt.getQ() == null ? "" : gqt.getQ());
+            s.setCkmoney(DataUtil.changeMoney(gqt.getQ()));
             s.setFkTime(gqt.getS() == null ? "" : gqt.getS());
             s.setProName(sheetName);
             s.setCurMoney("");
@@ -102,10 +103,10 @@ public class RansomController {
             s.setName(gqt.getB() == null ? "" : gqt.getB());
             s.setHtbh(gqt.getC() == null ? "" : gqt.getC());
             s.setKhsfzh(gqt.getD() == null ? "" : gqt.getD());
-            s.setCkmoney(gqt.getP() == null ? "" : gqt.getP());
-            s.setFkTime(gqt.getQ() == null ? "" : gqt.getQ());
+            s.setCkmoney(DataUtil.changeMoney(gqt.getP()));
+            s.setFkTime(DataUtil.changeDate(gqt.getQ()));
             s.setProName(sheetName);
-            s.setCurMoney(gqt.getEO() == null ? "" : gqt.getEO());
+            s.setCurMoney(DataUtil.changeMoney(gqt.getEO()));
             //合同编号和客户姓名没有 不保存
             if(s.getName() == "" && s.getHtbh() == ""){
                 continue;
@@ -125,10 +126,10 @@ public class RansomController {
             s.setName(gqt.getB() == null ? "" : gqt.getB());
             s.setHtbh(gqt.getC() == null ? "" : gqt.getC());
             s.setKhsfzh(gqt.getD() == null ? "" : gqt.getD());
-            s.setCkmoney(gqt.getP() == null ? "" : gqt.getP());
-            s.setFkTime(gqt.getQ() == null ? "" : gqt.getQ());
+            s.setCkmoney(DataUtil.changeMoney(gqt.getP()));
+            s.setFkTime(DataUtil.changeDate(gqt.getQ()));
             s.setProName(sheetName);
-            s.setCurMoney(gqt.getCU() == null ? "" : gqt.getCU());
+            s.setCurMoney(DataUtil.changeMoney(gqt.getCU()));
             //合同编号和客户姓名没有 不保存
             if(s.getName() == "" && s.getHtbh() == ""){
                 continue;
@@ -148,10 +149,10 @@ public class RansomController {
             s.setName(gqt.getB() == null ? "" : gqt.getB());
             s.setHtbh(gqt.getD() == null ? "" : gqt.getD());
             s.setKhsfzh(gqt.getE() == null ? "" : gqt.getE());
-            s.setCkmoney(gqt.getQ() == null ? "" : gqt.getQ());
-            s.setFkTime(gqt.getS() == null ? "" : gqt.getS());
+            s.setCkmoney(DataUtil.changeMoney(gqt.getQ()));
+            s.setFkTime(DataUtil.changeDate(gqt.getS()));
             s.setProName(sheetName);
-            s.setCurMoney(gqt.getDW() == null ? "" : gqt.getDW());
+            s.setCurMoney(DataUtil.changeMoney(gqt.getDW()));
             //合同编号和客户姓名没有 不保存
             if(s.getName() == "" && s.getHtbh() == ""){
                 continue;
@@ -171,10 +172,10 @@ public class RansomController {
             s.setName(gqt.getB() == null ? "" : gqt.getB());
             s.setHtbh(gqt.getC() == null ? "" : gqt.getC());
             s.setKhsfzh(gqt.getD() == null ? "" : gqt.getD());
-            s.setCkmoney(gqt.getO() == null ? "" : gqt.getO());
-            s.setFkTime(gqt.getQ() == null ? "" : gqt.getQ());
+            s.setCkmoney(DataUtil.changeMoney(gqt.getO()));
+            s.setFkTime(DataUtil.changeDate(gqt.getQ()));
             s.setProName(sheetName);
-            s.setCurMoney(gqt.getDM() == null ? "" : gqt.getDM());
+            s.setCurMoney(DataUtil.changeMoney(gqt.getDM()));
             //合同编号和客户姓名没有 不保存
             if(s.getName() == "" && s.getHtbh() == ""){
                 continue;
@@ -184,5 +185,7 @@ public class RansomController {
         System.out.println("空间贷：" + scsjList.size());
         return scsjList;
     }
+
+
 
 }

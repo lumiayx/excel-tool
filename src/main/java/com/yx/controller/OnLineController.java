@@ -1,5 +1,6 @@
 package com.yx.controller;
 
+import com.yx.excel.util.DataUtil;
 import com.yx.excel.util.ExcelImportUtil;
 import com.yx.excel.util.PropertiesManager;
 import com.yx.model.online.SCSJ;
@@ -32,8 +33,8 @@ public class OnLineController {
             SLTZDATA s = new SLTZDATA();
             s.setHtbh(scsj.getHth() == null ? "" : scsj.getHth());
             s.setName(scsj.getKhName() == null ? "" : scsj.getKhName());
-            s.setCkmoney(scsj.getHtmoney() == null ? "" : scsj.getHtmoney());
-            s.setFkTime(scsj.getFkTime() == null ? "" : scsj.getFkTime());
+            s.setCkmoney(DataUtil.changeMoney(scsj.getHtmoney()));
+            s.setFkTime(DataUtil.changeDate(scsj.getFkTime()));
             s.setKhsfzh(scsj.getZjh() == null ? "" : scsj.getZjh());
             s.setProName(scsj.getProName() == null ? "" : scsj.getProName());
             s.setCurMoney("");
@@ -42,4 +43,5 @@ public class OnLineController {
         System.out.println("生产数据：" + sltzList.size());
         return sltzList;
     }
+
 }
